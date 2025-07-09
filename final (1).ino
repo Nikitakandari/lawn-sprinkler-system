@@ -1,8 +1,8 @@
 #include<DHT.h>//DHT Library
-#include <SoftwareSerial.h>// For making virtual serial connection
+#include <SoftwareSerial.h>
 #include<LiquidCrystal.h>
 
-#define DHTPIN 5 //Pin type and number
+#define DHTPIN 5
 #define DHTTYPE DHT11
 #define LEDIN 13
 #define MOTORIN 7
@@ -11,7 +11,7 @@
 
 LiquidCrystal lcd(12, 11, 6, 4, 0, 1);
 const int VAL_PROBE = 0;
-const int MOISTURE_LEVEL = 50;//Thresholds
+const int MOISTURE_LEVEL = 50;
 const int TEMPERATURE_LEVEL = 30;
 const int HUMIDITY_LEVEL = 50;
 
@@ -23,9 +23,9 @@ int moisture = -99,moisturep;
 long previousMillis = 0;
 unsigned long currentMillis = 0;
 long interval = 16000;
-String apiKey = "QNEG8U8IZ8T2WVGS";//Thingspeak Private API key
-String ssid="COLDSPOT";//WiFi SSID
-String password ="1234567890";//Password
+String apiKey = "QNEG8U8IZ8T2WVGS";
+String ssid="COLDSPOT";
+String password ="1234567890";
 boolean DEBUG=true;
 
 
@@ -34,8 +34,8 @@ void setup()
   lcd.begin(16, 2);
   DEBUG=true;
   bool status;
-  Serial.begin(9600);//Serial communication at 9600 baud rate
-  espSerial.begin(115200);//Serial communication at 115200 baud rate
+  Serial.begin(9600);
+  espSerial.begin(115200);
   dht.begin();
   Serial.println("Booting up sensors.....");
   delay(500);
